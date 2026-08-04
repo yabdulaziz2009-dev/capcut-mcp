@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+
+# Render output — regenerated, and the .mov files are tens of megabytes each
+out/
+
+# Scratch benchmarks and probes — never committed
+bench.ts
+t.ts
+smoke.ts
+canvas.ts

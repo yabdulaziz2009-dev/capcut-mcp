@@ -1,0 +1,117 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  body{margin:0;background:#fff}
+  .title{font:800 46px 'Segoe UI',sans-serif;fill:#111827}
+  .sub{font:400 24px 'Segoe UI',sans-serif;fill:#6b7280}
+  .t1{font:700 24px 'Segoe UI',sans-serif;fill:#1f2937}
+  .t2{font:400 20px 'Segoe UI',sans-serif;fill:#374151}
+  .t3{font:600 18px 'Segoe UI',sans-serif;fill:#4b5563}
+  .sec{font:700 22px 'Segoe UI',sans-serif;fill:#6b7280;letter-spacing:1px}
+  .lbl{font:600 19px 'Segoe UI',sans-serif;fill:#6b7280;paint-order:stroke;stroke:#fff;stroke-width:8;stroke-linejoin:round}
+  .foot{font:400 20px 'Segoe UI',sans-serif;fill:#9ca3af}
+  .edge{stroke:#7b8494;stroke-width:2.5;fill:none;marker-end:url(#arr)}
+  .dash{stroke:#9aa1ab;stroke-width:2.5;fill:none;stroke-dasharray:4 8;stroke-linecap:round;marker-end:url(#arr)}
+  .law{stroke:#f0b429;stroke-width:2.5;fill:none;stroke-dasharray:3 8;stroke-linecap:round}
+</style></head><body>
+<svg width="3000" height="2840" viewBox="0 0 1500 1420" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+<path d="M1,1 L8,4.5 L1,8 Z" fill="#7b8494"/></marker></defs>
+
+<rect width="1500" height="1420" fill="#ffffff"/>
+
+<!-- Title -->
+<text x="60" y="88" class="title">🎬 capcut-mcp — архитектура</text>
+<text x="60" y="128" class="sub">конвейер, а не обёртка · машина собирает, человек доводит</text>
+
+<!-- Law card -->
+<rect x="1010" y="42" width="430" height="122" rx="16" fill="#fffbeb" stroke="#f0b429" stroke-width="2.5"/>
+<text x="1225" y="80" text-anchor="middle" class="t3">⚖️ Слой-закон</text>
+<text x="1225" y="110" text-anchor="middle" class="t3">не парсим draft JSON сами —</text>
+<text x="1225" y="140" text-anchor="middle" class="t3">только через capcut-cli</text>
+
+<!-- Start -->
+<rect x="620" y="190" width="260" height="56" rx="28" fill="#dcfce7" stroke="#4caf6d" stroke-width="2.5"/>
+<text x="750" y="226" text-anchor="middle" class="t1">📥 Запрос агента</text>
+<path class="edge" d="M750,246 L750,286"/>
+
+<!-- MCP server -->
+<rect x="390" y="290" width="720" height="110" rx="16" fill="#ede9fe" stroke="#8b7cd8" stroke-width="2.5"/>
+<text x="750" y="332" text-anchor="middle" class="t1">🧠 MCP-сервер</text>
+<text x="750" y="366" text-anchor="middle" class="t2">инструменты уровня рабочих процессов</text>
+<path class="edge" d="M750,400 L750,421"/>
+
+<!-- Safety gate -->
+<polygon points="500,505 750,425 1000,505 750,585" fill="#fce7f3" stroke="#d16a9f" stroke-width="2.5"/>
+<text x="750" y="497" text-anchor="middle" class="t1">check_compatibility</text>
+<text x="750" y="527" text-anchor="middle" class="t2">версия · шифрование</text>
+
+<!-- Refusal branch -->
+<rect x="1060" y="450" width="380" height="110" rx="16" fill="#fee2e2" stroke="#d05252" stroke-width="2.5"/>
+<text x="1250" y="492" text-anchor="middle" class="t1">🛑 Отказ с причиной</text>
+<text x="1250" y="526" text-anchor="middle" class="t2">без «попробуем всё равно»</text>
+<path class="edge" d="M1000,505 L1056,505"/>
+<text x="1006" y="487" class="lbl">нет</text>
+
+<path class="edge" d="M750,585 L750,646"/>
+<text x="768" y="620" class="lbl">ok</text>
+
+<!-- Three channels -->
+<text x="60" y="628" class="sec">ТРИ КАНАЛА</text>
+
+<rect x="90" y="650" width="400" height="185" rx="16" fill="#dbeafe" stroke="#5b8ec9" stroke-width="2.5"/>
+<text x="290" y="692" text-anchor="middle" class="t1">⚙️ capcut-cli</text>
+<text x="290" y="726" text-anchor="middle" class="t2">draft I/O · safety · lint</text>
+<text x="290" y="756" text-anchor="middle" class="t2">78 команд · MIT · 0 зависимостей</text>
+<text x="290" y="796" text-anchor="middle" class="t3">внешняя зависимость, пиновано</text>
+
+<rect x="550" y="650" width="400" height="185" rx="16" fill="#ede9fe" stroke="#8b7cd8" stroke-width="2.5"/>
+<text x="750" y="692" text-anchor="middle" class="t1">🎞️ Remotion bridge</text>
+<text x="750" y="726" text-anchor="middle" class="t2">оверлеи с альфа-каналом</text>
+<text x="750" y="756" text-anchor="middle" class="t2">ProRes 4444 / VP9</text>
+<text x="750" y="796" text-anchor="middle" class="t3">наш дифференциатор</text>
+
+<rect x="1010" y="650" width="400" height="185" rx="16" fill="#ffedd5" stroke="#d98736" stroke-width="2.5"/>
+<text x="1210" y="692" text-anchor="middle" class="t1">🎨 Генерация ассетов</text>
+<text x="1210" y="726" text-anchor="middle" class="t2">LUT .cube · SRT</text>
+<text x="1210" y="756" text-anchor="middle" class="t2">CapCut их не создаёт</text>
+<text x="1210" y="796" text-anchor="middle" class="t3">дёшево, без реверса</text>
+
+<!-- fan-out -->
+<path class="edge" d="M750,646 C600,646 290,600 290,644"/>
+<path class="edge" d="M750,646 L750,644"/>
+<path class="edge" d="M750,646 C900,646 1210,600 1210,644"/>
+
+<!-- fan-in to draft -->
+<path class="edge" d="M290,835 C290,880 560,890 686,896"/>
+<path class="edge" d="M750,835 L750,896"/>
+<path class="edge" d="M1210,835 C1210,880 940,890 814,896"/>
+
+<!-- Draft files -->
+<rect x="430" y="900" width="640" height="110" rx="16" fill="#d1f5ea" stroke="#2ea98c" stroke-width="2.5"/>
+<text x="750" y="942" text-anchor="middle" class="t1">📁 Проект CapCut</text>
+<text x="750" y="976" text-anchor="middle" class="t2">draft_content.json · микросекунды · граф UUID</text>
+<path class="edge" d="M750,1010 L750,1056"/>
+
+<!-- Human -->
+<rect x="390" y="1060" width="720" height="120" rx="16" fill="#dcfce7" stroke="#4caf6d" stroke-width="2.5"/>
+<text x="750" y="1104" text-anchor="middle" class="t1">✅ Монтажёр открывает и доводит</text>
+<text x="750" y="1138" text-anchor="middle" class="t2">маски · кривые ключевых кадров · цветокоррекция</text>
+<text x="750" y="1166" text-anchor="middle" class="t3">вкус остаётся человеку</text>
+
+<!-- Bottom cards -->
+<rect x="90" y="1225" width="620" height="120" rx="16" fill="#f4f5f7" stroke="#9aa1ab" stroke-width="2.5"/>
+<text x="400" y="1263" text-anchor="middle" class="t3">🚫 Не в v1</text>
+<text x="400" y="1293" text-anchor="middle" class="t3">GUI-автоматизация · JianYing · мобильный</text>
+<text x="400" y="1321" text-anchor="middle" class="t3">экспорт видео · облачные AI-функции</text>
+
+<rect x="790" y="1225" width="620" height="120" rx="16" fill="#fffbeb" stroke="#f0b429" stroke-width="2.5"/>
+<text x="1100" y="1263" text-anchor="middle" class="t3">⚠️ Gate 0 — до первой строки кода</text>
+<text x="1100" y="1293" text-anchor="middle" class="t3">CapCut 9.x не верифицирован апстримом:</text>
+<text x="1100" y="1321" text-anchor="middle" class="t3">правка должна пережить открытие в редакторе</text>
+
+<!-- Law overlay -->
+<path class="law" d="M1035,150 C980,220 1130,290 1114,330"/>
+
+<text x="750" y="1395" text-anchor="middle" class="foot">capcut-mcp · план 2026-08-04</text>
+</svg>
+</body></html>
