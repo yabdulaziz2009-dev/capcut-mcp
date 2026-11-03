@@ -201,3 +201,8 @@ overlay bridge.
 ## Licence
 
 MIT.
+
+
+## Author
+
+Built by [Abdulaziz Yakubov](https://abdulaziz-yakubov.vercel.app) — Full Stack developer & SEO, Tashkent. [GitHub](https://github.com/yabdulaziz2009-dev) · [LinkedIn](https://www.linkedin.com/in/abdulazizyakubov) · [DEV](https://dev.to/abdulazizyakubov)
